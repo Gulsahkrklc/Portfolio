@@ -2,6 +2,12 @@ import useLanguage from "../hooks/useLanguage";
 
 export default function Project() {
   const { currentContent } = useLanguage();
+
+  // currentContent veya projectsList yoksa bir yedek içerik göster
+  if (!currentContent || !Array.isArray(currentContent.projectsList)) {
+    return <div>Projects not available</div>;
+  }
+
   return (
     <div className="flex flex-wrap justify-center gap-8 p-6">
       {currentContent.projectsList.map((project, index) => (
@@ -21,30 +27,6 @@ export default function Project() {
             <p className="text-[#4B5563] dark:text-[#B0B7C3] mt-2 text-sm">
               {project.pdesc}
             </p>
-            <div className="mt-3 flex gap-2 flex-wrap">
-              {project.technologies.map((tech, techIndex) => (
-                <button
-                  key={techIndex}
-                  className="px-3 py-1 rounded-lg text-xs dark:bg-[#3b3f48] bg-gradient-to-r from-[#EAE7FF] to-[#D8D4FF] dark:hover:from-[#525866] dark:hover:to-[#4b4f5a] hover:bg-[#D8D4FF] border border-[#4F46E5] dark:border-[#D1D5DB] transition-all  hover:scale-105"
-                >
-                  {tech}
-                </button>
-              ))}
-            </div>
-            <div className="mt-4 flex justify-between">
-              <a
-                href={project.github}
-                className="text-[#5A4FCF] dark:text-[#CABFFD] text-sm hover:underline  hover:scale-105"
-              >
-                Github
-              </a>
-              <a
-                href={project.site}
-                className="text-[#5A4FCF] dark:text-[#CABFFD] text-sm hover:underline  hover:scale-105  "
-              >
-                View Site
-              </a>
-            </div>
           </div>
         </div>
       ))}

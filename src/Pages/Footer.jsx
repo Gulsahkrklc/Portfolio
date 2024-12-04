@@ -12,7 +12,7 @@ export default function Footer() {
         </h2>
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <article className="text-[#AF0C48] dark:text-[#BAB2E7] text-center sm:text-left hover:underline">
-            👉 gulsah.akblt@gmail.com
+            👉 guakblt@gmail.com
           </article>
           <nav className="flex gap-4 justify-center sm:justify-start">
             <a

@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
 import Gulsah from "../assets/Gulsah.jpg";
 
 import useLanguage from "../hooks/useLanguage";
@@ -40,7 +39,7 @@ export default function Main() {
             className="w-full sm:w-auto"
           >
             <button className="px-4 py-2 dark:text-[#E1E1FF] dark:bg-[#383838] text-[#3730A3] border-1 border-[#3730A3] rounded-md w-full sm:w-auto  hover:scale-105 duration-300">
-              <FontAwesomeIcon icon={faGithub} /> Github
+              Github
             </button>
           </a>
           <a
@@ -48,7 +47,7 @@ export default function Main() {
             className="w-full sm:w-auto"
           >
             <button className="px-4 py-2  text-[#3730A3] dark:text-[#E1E1FF] border-1 border-[#3730A3] rounded-md w-full sm:w-auto dark:bg-[#383838] hover:scale-105 duration-500 ">
-              <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+              LinkedIn
             </button>
           </a>
         </div>

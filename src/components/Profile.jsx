@@ -3,6 +3,11 @@ import useLanguage from "../hooks/useLanguage";
 export default function Profile() {
   const { currentContent } = useLanguage();
 
+  // currentContent veya profileDetails yoksa bir yedek içerik göster
+  if (!currentContent || !currentContent.profileDetails) {
+    return <div>Profile details not available</div>;
+  }
+
   return (
     <div className="flex flex-col lg:flex-row justify-between gap-8 p-4">
       <div className="flex flex-col gap-8 rounded-xl border-2 border-purple-100 bg-gradient-to-r bg-opacity-30 p-8 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 ">
@@ -19,17 +24,6 @@ export default function Profile() {
             </li>
           ))}
         </ul>
-      </div>
-      <div className="flex flex-col mt-8 lg:mt-0  border-2 border-purple-100 bg-gradient-to-r  bg-opacity-30 p-8 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-        <h2 className="text-[#4338CA] dark:text-[#B7AAFF]">
-          {currentContent.about}
-        </h2>
-        <p className="text-lg max-w-md whitespace-pre-line text-[#6B7280] mt-2">
-          {currentContent.info1}
-        </p>
-        <p className="text-lg max-w-md whitespace-pre-line text-[#6B7280] mt-2">
-          {currentContent.info2}
-        </p>
       </div>
     </div>
   );
