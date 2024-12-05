@@ -1,3 +1,9 @@
+import { createContext, useEffect, useState } from "react";
+import axios from "axios";
+import { ceviri } from "../language";
+
+export const TransleteContext = createContext(); 
+
 export default function TransleteContextProvider({ children }) {
   const [leanguage, setLeanguage] = useState(() => {
     const savedLeanguage = localStorage.getItem("leanguage");
@@ -5,18 +11,20 @@ export default function TransleteContextProvider({ children }) {
       ? savedLeanguage
       : "en";
   });
-  const [currentContent, setCurrentContent] = useState(null);
+
+  const [currentContent, setCurrentContent] = useState(ceviri[leanguage]);
 
   useEffect(() => {
     localStorage.setItem("leanguage", leanguage);
+    
 
     axios
       .post("https://reqres.in/api/workintech", ceviri[leanguage])
       .then((response) => {
-        setCurrentContent(response.data || ceviri[leanguage]);
+        setCurrentContent(response.data);
       })
-      .catch(() => {
-        setCurrentContent(ceviri[leanguage]);
+      .catch((error) => {
+        console.error("Error posting data:", error);
       });
   }, [leanguage]);
 
@@ -32,3 +40,4 @@ export default function TransleteContextProvider({ children }) {
     </TransleteContext.Provider>
   );
 }
+

@@ -1,5 +1,5 @@
 
-//import ErrorBoundary from "./components/ErrorBoundary"; // Doğru yolu kontrol edin
+//import ErrorBoundary from "./components/ErrorBoundary"; 
 import Main from "./Pages/Main";
 import Header from "./Pages/Header";
 import Skills from "./Pages/SkillsPage";
