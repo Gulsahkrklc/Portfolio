@@ -1,4 +1,5 @@
 import useLanguage from "../hooks/useLanguage";
+import { ceviri } from "../language";
 
 export default function Links() {
   const { currentContent } = useLanguage();

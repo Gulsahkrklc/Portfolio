@@ -3,7 +3,7 @@ import useLanguage from "../hooks/useLanguage";
 export default function Project() {
   const { currentContent } = useLanguage();
 
-  // currentContent veya projectsList yoksa bir yedek içerik göster
+  
   if (!currentContent || !Array.isArray(currentContent.projectsList)) {
     return <div>Projects not available</div>;
   }

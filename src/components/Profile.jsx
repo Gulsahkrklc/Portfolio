@@ -3,7 +3,7 @@ import useLanguage from "../hooks/useLanguage";
 export default function Profile() {
   const { currentContent } = useLanguage();
 
-  // currentContent veya profileDetails yoksa bir yedek içerik göster
+  
   if (!currentContent || !currentContent.profileDetails) {
     return <div>Profile details not available</div>;
   }

@@ -1,6 +1,6 @@
 import useLanguage from "../hooks/useLanguage";
 
-import { FaGithub, FaLinkedin, FaBlog } from "react-icons/fa"; // React ikonu
+import { FaGithub, FaLinkedin, FaBlog } from "react-icons/fa"; 
 
 export default function Footer() {
   const { currentContent } = useLanguage();
